@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Szymon Newel </title>
+        
+		
+		<style>
+			*
+			{
+				text-align:left;
+				margin-top: 0px;
+			}
+			#kolor
+			{
+				min-width:40px;
+				max-width:400px;
+				min-height:100px;
+				background-color:orange;
+				margin-top:20px;
+			}
+			#head
+			{
+				font-size: 30px;
+			}
+			.t
+			{
+				content:"";
+				display:block;
+				clear:both;
+				
+
+			}
+			.s
+			{
+				float: left;
+			}
+			.lipa
+			{
+                float: left;
+				color:blue;
+				margin-right: 10px;
+				font-size:20px;
+				margin-left:20px;
+			}
+			.lipa1
+			{
+                float: left;
+				color:blue;
+				margin-right: 10px;
+				font-size:20px;
+				margin-top:10px;
+				margin-left:20px;
+			}
+			#koniec
+			{
+				margin-left:5px;
+			}
+			.top
+			{
+                float: left;
+				margin-top:10px;
+                background-color: orangered;
+			}
+			#Wyslij
+			{
+				text-align:center;
+				
+			}
+            .input.text
+            {
+                background-color: aqua;
+            }
+		</style>
+        <script defer src="formularz.js"></script>
+	</head>
+	<body>
+	
+		<div id="head">
+			Uzupełnij poniższy formularz i kliknij przycisk wyślij!!
+		</div>
+		<br>
+    <form onchange="sprawdz(this)">
+	<div id="kolor">
+		<br>
+		<div class="t">
+			<div class="lipa1">
+				Imie:
+			</div>
+			<div class="top">
+				<input type="text" name="imie"  placeholder="Z dużej litery (max 30 znaków)" pattern="^[A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśćżź]{1,29}$" required >
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Nazwisko:
+			</div>
+			<div class="s">
+				<input type="text" name="nazwisko" placeholder="Z dużej litery (max 30 znaków , drugi człon po ' - ')" pattern="^[A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśćżź]{1,30}(-[A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśćżź]{1,30})?$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Data urodzenia:
+			</div>
+			<div class="s">
+				<input type="date" name="data" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Miejsce urodzenia:
+			</div>
+			<div class="s">
+				<input type="text" name="miejsce" placeholder="Z dużej litery (max 30 znaków)" pattern="^[A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśćżź]{2,30}$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Pesel:
+			</div>
+			<div class="s">
+				<input type="number" name="pesel" placeholder="11 cyfr" pattern="^\d{11}$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Adres zamieszkania:
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Ulica:
+			</div>
+			<div class="s">
+				<input type="text" name="ulica" placeholder="Z dużej litery (max 40 znaków)" pattern="^[A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśćżź]{1,30}(-[A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśćżź])?{1,30}(-[a-ząćęłńóśćżź])?{1,30}$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Numer domu:
+			</div>
+			<div class="s">
+				<input type="number" name="nrdomu" placeholder="max 4 cyfry" pattern="^\d{1,4}$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Numer mieszkania:
+			</div>
+			<div class="s">
+				<input type="number" name="nrmieszkania" placeholder="max 4 cyfry" pattern="^\d{1,4}$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Miasto:
+			</div>
+			<div class="s">
+				<input type="text" name="miasto" placeholder="Z dużej litery" pattern="^[A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśćżź]{2,39}$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Kod pocztowy:
+			</div>
+			<div class="s">
+				<input type="tel" name="kodpocztowy" placeholder="xx-xxx" pattern="^\d{2}-\d{3}$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Parawo jazdy:
+			</div>
+			<div class="s">
+				<input type="checkbox" name="tak" value="tak">
+				(posiadam)
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Płeć:
+			</div>
+			<div class="s">
+				<input type="radio" name="plec" value="M" required>
+				Meszczyzna
+				<input type="radio" name="plec" value="K" required>
+				Kobieta
+				<input type="radio" name="plec" value="K" required>
+				Inna
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Numer telefonu:
+			</div>
+			<div class="s">
+				<input type="tel" name="telefon" placeholder="xxx xxx xxx" pattern="^\d{3}([-\s])?\d{3}([-\s])?\d{3}$" required>
+			</div>
+		</div>
+		<div class="t">
+			<div class="lipa">
+				Uwagi:
+			</div>
+			<div class="s">
+				<textarea rows="4" cols="20" placeholder="Podaj uwagi ..."></textarea>
+			</div>
+		</div>
+		<br>
+        <br>
+        <br>
+        <br>
+		<br>
+		<div class="t">
+			<div id="Wyslij">
+				<button type="submit">Wyślij</button>
+			</div>
+			
+		</div>
+		<br>
+	</form>	
+	</div>	
+		
+		</div>
+		
+		<div class="t">
+			<div class="s" >
+				By wrócić do strony głównej kliknij 
+			</div>
+			<div class="s" id="koniec">
+				<a href="index.html">tutaj</a>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="t">
+			<div class="s" >
+				Wersja bez bajerów : 
+			</div>
+			<div class="s" id="koniec">
+				<a href="formularz1.html">oto ona</a>
+			</div>
+		</div>
+		
+		
+		
+	</body>
+</html>

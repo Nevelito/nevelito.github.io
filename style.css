@@ -1,0 +1,22 @@
+.conteiner
+{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 10px;
+
+    
+}
+.linia
+{
+    width: 50%;
+    float: left;
+    padding-left: 3px;
+    content: "";
+    display: block;
+    clear: both;
+}
+.conteiner div input
+{
+    
+}
